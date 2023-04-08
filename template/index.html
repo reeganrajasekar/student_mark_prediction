@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Student Mark Prediction</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    </link>
+    <link rel="stylesheet" href="../static/style.css" type = "text/css">
+    </link>
+</head>
+
+<body>
+
+    <!--Jumbotron-->
+        <h3 id = "form-heading">Student Mark Prediction</h3>
+        {%if pred %}
+        <div id = "result">
+            <h3 style = "text-align: center;
+            color: black;
+            font-size: 25px;
+            font-weight: 100;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-color:#f2c111;
+            border-radius: 20px;
+            
+            opacity: 0.9;">{{pred}}</h3>
+        </div>
+        {% endif %}
+
+
+    <!--Form-->
+    <div id="form" class="container-fluid">
+        <h3>Please fill the following form to know your result</h3>
+        <form action="/score_predict" method="POST" id="form-struct">
+            
+            <div class="form-group text">
+                <label for="thirtyone">Enter your first Cycle grade.</label>
+                <input type="text" class="form-control" aria-describedby="1_" name="3">
+                <small id="new_thirtyone" class="form-text text-muted">* from 0 to 100</small>
+            </div>
+            <div class="form-group text">
+                <label for="thirtytwo">Enter your second Cycle grade.</label>
+                <input type="text" class="form-control" aria-describedby="1_" name="4">
+                <small id="new_thirtytwo" class="form-text text-muted">* from 0 to 100</small>
+            </div>
+            <div class="form-group text">
+                <label for="thirty">Enter your number of absences from school.</label>
+                <input type="text" class="form-control" aria-describedby="1_" name="1">
+                <small id="new_thirty" class="form-text text-muted">* from 0 to 100</small>
+            </div>
+            <div class="form-group text">
+                <label for="thirtytwo">Staff Personal Grade.</label>
+                <input type="text" class="form-control" aria-describedby="1_" name="2">
+                <small id="new_thirtytwo" class="form-text text-muted">* from 0 to 10</small>
+            </div>
+            <div id="button">
+                <button type="submit" class="btn btn-primary ">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <script src="../static/bootstrap/js/jquery-3.5.1.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    
+
+</body>
+
+</html>
